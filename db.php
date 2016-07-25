@@ -1234,20 +1234,45 @@ if (class_exists("Mongo")) {
                     foreach($parser->parsed as $sql => $obj) {
                         switch($sql) {
                             case 'CREATE':
+                                /*
+                                 * db.createCollection("<table name>")
+                                 */
                                 break;
                             case 'INSERT':
+                                /*
+                                 * db.<table name>.insert()
+                                 */
                                 break;
                             case 'DELETE':
+                                /*
+                                 * db.<table name>.remove()
+                                 */
                                 break;
                             case 'UPDATE':
+                                /*
+                                 * db.<table name>.update()
+                                 */
                                 break;
                             case 'SELECT':
+                                /*
+                                 * db.<table name>.find()
+                                 */
                                 echo '<pre>'; print_r($obj); echo '</pre>';
                                 break;
                             case 'FROM':
                                 echo '<pre>'; print_r($obj); echo '</pre>';
                                 break;
                             case 'WHERE':
+                                break;
+                            case 'DROP':
+                                /*
+                                 * db.<table name>.drop()
+                                 */
+                                break;
+                            case 'EXPLAIN':
+                                /*
+                                 * db.<table name>.find().explain()
+                                 */
                                 break;
                             default:
                         }
